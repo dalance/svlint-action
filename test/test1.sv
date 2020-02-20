@@ -1,6 +1,5 @@
 module A;
 always_comb begin
-
     case (x)
         1: y = 0;
     endcase
