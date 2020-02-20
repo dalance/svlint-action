@@ -9,8 +9,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Test
+    - name: Test with files
       uses: dalance/svlint-action@master
       with:
-        files: 'a.sv b.sv'
-        filelists: 'a.f b.f'
+        files: 'test/test1.sv test/test2.sv'
+    - name: Test with filelists
+      uses: dalance/svlint-action@master
+      with:
+        filelists: 'test/test3.f test/test4.f'
