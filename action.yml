@@ -14,3 +14,6 @@ runs:
   args:
     - ${{ inputs.files }}
     - ${{ inputs.filelists }}
+branding:
+  icon: 'check-circle'
+  color: 'orange'
