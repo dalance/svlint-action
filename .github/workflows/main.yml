@@ -15,7 +15,11 @@ jobs:
         files: |
           test/test1.sv
           test/test2.sv
+      continue-on-error: true
     - name: Test with filelists
       uses: dalance/svlint-action@master
       with:
-        filelists: 'test/test3.f test/test4.f'
+        filelists: |
+          test/test3.f
+          test/test4.f
+      continue-on-error: true
