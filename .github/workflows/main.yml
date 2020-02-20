@@ -12,9 +12,9 @@ jobs:
     - name: Test with files
       uses: dalance/svlint-action@master
       with:
-        files:
-        - test/test1.sv
-        - test/test2.sv
+        files: |
+          test/test1.sv
+          test/test2.sv
     - name: Test with filelists
       uses: dalance/svlint-action@master
       with:
