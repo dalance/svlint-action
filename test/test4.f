@@ -1,1 +1,1 @@
-test/test4.sv
+$(TEST_DIR)/test4.sv

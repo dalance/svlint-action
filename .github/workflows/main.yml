@@ -23,3 +23,5 @@ jobs:
           test/test3.f
           test/test4.f
       continue-on-error: true
+      env:
+        TEST_DIR: test
