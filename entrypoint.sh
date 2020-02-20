@@ -10,5 +10,3 @@ do
 done
 
 svlint $files $filelists
-
-echo "::error file=test.sv,line=3,col=5::case must have default in always_comb or function"
