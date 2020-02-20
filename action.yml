@@ -1,0 +1,16 @@
+name: 'svlint'
+author: 'dalance'
+description: 'SystemVerilog linter'
+inputs:
+  files:
+    description: 'filenames of SystemVerilog source code'
+    required: false
+  filelists:
+    description: 'filenames of filelist'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.files }}
+    - ${{ inputs.filelists }}
