@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: svlint-action test
+      uses: dalance/svlint-action@v1
+      with:
+        files: 'a.sv b.sv'
+        filelists: 'a.f b.f'
