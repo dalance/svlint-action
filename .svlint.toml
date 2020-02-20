@@ -3,9 +3,9 @@ exclude_paths = []
 
 [rules]
 case_default = true
-enum_with_type = false
-for_with_begin = false
-function_same_as_system_function = false
+enum_with_type = true
+for_with_begin = true
+function_same_as_system_function = true
 function_with_automatic = false
 generate_for_with_label = false
 generate_if_with_label = false
