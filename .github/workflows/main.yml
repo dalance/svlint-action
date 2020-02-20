@@ -10,7 +10,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Test
-      uses: dalance/svlint-action@v0.1.1
+      uses: dalance/svlint-action@v0.1.2
       with:
         files: 'a.sv b.sv'
         filelists: 'a.f b.f'
