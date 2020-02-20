@@ -5,7 +5,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: svlint-action test
+    - name: Checkout
+      uses: actions/checkout@v2
+    - uses: ./
+    - name: Test
       uses: dalance/svlint-action@v1
       with:
         files: 'a.sv b.sv'
