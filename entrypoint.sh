@@ -6,7 +6,7 @@ svlint --version
 
 for filelist in $2
 do
-    filelists="-f $filelist $filelists"
+    filelists="$filelists -f $filelist"
 done
 
 svlint --github-actions $files $filelists
