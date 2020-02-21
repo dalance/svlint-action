@@ -1,6 +1,6 @@
-name: 'svlint'
+name: 'SystemVerilog Linter'
 author: 'dalance'
-description: 'SystemVerilog linter'
+description: 'SystemVerilog source code check by svlint'
 inputs:
   files:
     description: 'filenames of SystemVerilog source code'
