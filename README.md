@@ -1,6 +1,6 @@
 # svlint-action
 
-This action check SystemVerilog source code by [svlint](https://github.com/dalance/svlint).
+This action checks SystemVerilog source code by [svlint](https://github.com/dalance/svlint).
 
 ## Inputs
 
