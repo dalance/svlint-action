@@ -8,7 +8,7 @@ jobs:
 # NOT FOR MERGE
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 # NOT FOR MERGE
     - name: Test with files @ regression
       uses: DaveMcEwan/svlint-action@regression
