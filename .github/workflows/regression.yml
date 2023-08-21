@@ -1,23 +1,25 @@
 name: Regression
-
+# NOT FOR MERGE
 on: [push]
-
+# NOT FOR MERGE
 jobs:
   build:
     runs-on: ubuntu-latest
-
+# NOT FOR MERGE
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Test with files @ release
-      uses: dalance/svlint-action@v1
+# NOT FOR MERGE
+    - name: Test with files @ regression
+      uses: DaveMcEwan/svlint-action@regression
       with:
         files: |
           test/test1.sv
           test/test2.sv
       continue-on-error: true
-    - name: Test with filelists @ release
-      uses: dalance/svlint-action@v1
+# NOT FOR MERGE
+    - name: Test with filelists @ regression
+      uses: DaveMcEwan/svlint-action@regression
       with:
         filelists: |
           test/test3.f
@@ -25,19 +27,4 @@ jobs:
       continue-on-error: true
       env:
         TEST_DIR: test
-    - name: Test with files @ master
-      uses: dalance/svlint-action@master
-      with:
-        files: |
-          test/test1.sv
-          test/test2.sv
-      continue-on-error: true
-    - name: Test with filelists @ master
-      uses: dalance/svlint-action@master
-      with:
-        filelists: |
-          test/test3.f
-          test/test4.f
-      continue-on-error: true
-      env:
-        TEST_DIR: test
+# NOT FOR MERGE
