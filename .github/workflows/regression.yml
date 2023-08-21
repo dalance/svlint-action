@@ -1,25 +1,23 @@
 name: Regression
-# NOT FOR MERGE
+
 on: [push]
-# NOT FOR MERGE
+
 jobs:
   build:
     runs-on: ubuntu-latest
-# NOT FOR MERGE
+
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-# NOT FOR MERGE
-    - name: Test with files @ svlint-v0.9.0
-      uses: DaveMcEwan/svlint-action@svlint-v0.9.0
+    - name: Test with files @ release
+      uses: dalance/svlint-action@v1
       with:
         files: |
           test/test1.sv
           test/test2.sv
       continue-on-error: true
-# NOT FOR MERGE
-    - name: Test with filelists @ svlint-v0.9.0
-      uses: DaveMcEwan/svlint-action@svlint-v0.9.0
+    - name: Test with filelists @ release
+      uses: dalance/svlint-action@v1
       with:
         filelists: |
           test/test3.f
@@ -27,13 +25,37 @@ jobs:
       continue-on-error: true
       env:
         TEST_DIR: test
-# NOT FOR MERGE
-    - name: Test with ruleset @ svlint-v0.9.0
-      uses: DaveMcEwan/svlint-action@svlint-v0.9.0
+    # TODO: Ruleset test can be enabled after a new release.
+    #- name: Test with ruleset @ release
+    #  uses: dalance/svlint-action@v1
+    #  with:
+    #    ruleset: parseonly
+    #    files: |
+    #      test/test1.sv
+    #      test/test2.sv
+    #  continue-on-error: true
+    - name: Test with files @ master
+      uses: dalance/svlint-action@master
       with:
-        ruleset: parseonly
         files: |
           test/test1.sv
           test/test2.sv
       continue-on-error: true
-# NOT FOR MERGE
+    - name: Test with filelists @ master
+      uses: dalance/svlint-action@master
+      with:
+        filelists: |
+          test/test3.f
+          test/test4.f
+      continue-on-error: true
+      env:
+        TEST_DIR: test
+    # TODO: Ruleset test can be enabled after PR merge.
+    #- name: Test with ruleset @ master
+    #  uses: dalance/svlint-action@master
+    #  with:
+    #    ruleset: parseonly
+    #    files: |
+    #      test/test1.sv
+    #      test/test2.sv
+    #  continue-on-error: true
