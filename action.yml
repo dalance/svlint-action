@@ -8,12 +8,16 @@ inputs:
   filelists:
     description: 'Paths to filelist files.'
     required: false
+  ruleset:
+    description: 'Name of a ruleset, e.g "parseonly", "simsynth", etc.'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.files }}
     - ${{ inputs.filelists }}
+    - ${{ inputs.ruleset }}
 branding:
   icon: 'check-circle'
   color: 'orange'

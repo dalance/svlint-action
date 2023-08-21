@@ -49,15 +49,46 @@ env:
 ```
 
 
-## TOML Configuration
-By default, svlint will search upwards in the filesystem for a file called
-`.svlint.toml` and if such a file exists, then it is used as the configuration.
-This is ideal for projects which only use one set of rules, as it only requires
-placing your `.svlint.toml` in the root of your repository.
+### `ruleset`
+Name of a pre-written ruleset, i.e. a wrapper script which uses a bundled TOML
+configuration.
+NOTE: If a `ruleset` is specified, the environment variable `SVLINT_CONFIG`
+will be ignored.
 
-For larger projects which use multiple configurations, perhaps one for design
-and one for verification, the [TOML](https://toml.io/en/) configuration file
-can be specified using the `SVLINT_CONFIG` environment variable:
+As of svlint v0.9.0, the list of bundled rulesets is:
+- parseonly
+- style
+- simsynth
+- designintent
+- verifintent
+- DaveMcEwan-design
+- DaveMcEwan-designnaming
+
+See the svlint [MANUAL](https://github.com/dalance/svlint/blob/master/MANUAL.md)
+for more details about rulesets (also available as a PDF in a
+[released ZIP](https://github.com/dalance/svlint/releases/download/v0.9.0/svlint-v0.9.0-x86_64-lnx.zip)).
+
+#### Example Usage
+```yaml
+uses: dalance/svlint-action@master
+with:
+  ruleset: parseonly
+  files: |
+    src1.sv
+    src2.sv
+```
+
+
+## TOML Configuration
+When no ruleset is specified, svlint will search upwards in the filesystem for
+a file called `.svlint.toml` and if such a file exists, then it is used as the
+configuration.
+This is ideal for projects which only use one custom set of rules, as it only
+requires placing your `.svlint.toml` in the root of your repository.
+
+For larger projects which use multiple custom configurations, perhaps one for
+design and one for verification, the [TOML](https://toml.io/en/) configuration
+file can be specified using the `SVLINT_CONFIG` environment variable:
 ```yaml
 uses: dalance/svlint-action@master
 with:

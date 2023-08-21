@@ -28,3 +28,12 @@ jobs:
       env:
         TEST_DIR: test
 # NOT FOR MERGE
+    - name: Test with ruleset @ svlint-v0.9.0
+      uses: DaveMcEwan/svlint-action@svlint-v0.9.0
+      with:
+        ruleset: parseonly
+        files: |
+          test/test1.sv
+          test/test2.sv
+      continue-on-error: true
+# NOT FOR MERGE
