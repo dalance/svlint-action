@@ -3,10 +3,10 @@ author: 'dalance'
 description: 'SystemVerilog source code check by svlint'
 inputs:
   files:
-    description: 'filenames of SystemVerilog source code'
+    description: 'Paths to SystemVerilog source files.'
     required: false
   filelists:
-    description: 'filenames of filelist'
+    description: 'Paths to filelist files.'
     required: false
 runs:
   using: 'docker'
