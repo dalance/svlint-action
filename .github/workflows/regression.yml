@@ -10,16 +10,16 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 # NOT FOR MERGE
-    - name: Test with files @ regression
-      uses: DaveMcEwan/svlint-action@regression
+    - name: Test with files @ svlint-v0.9.0
+      uses: DaveMcEwan/svlint-action@svlint-v0.9.0
       with:
         files: |
           test/test1.sv
           test/test2.sv
       continue-on-error: true
 # NOT FOR MERGE
-    - name: Test with filelists @ regression
-      uses: DaveMcEwan/svlint-action@regression
+    - name: Test with filelists @ svlint-v0.9.0
+      uses: DaveMcEwan/svlint-action@svlint-v0.9.0
       with:
         filelists: |
           test/test3.f
