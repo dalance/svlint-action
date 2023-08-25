@@ -8,7 +8,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Test with files @ release
       uses: dalance/svlint-action@v1
       with:
@@ -25,6 +25,15 @@ jobs:
       continue-on-error: true
       env:
         TEST_DIR: test
+    # TODO: Ruleset test can be enabled after a new release.
+    #- name: Test with ruleset @ release
+    #  uses: dalance/svlint-action@v1
+    #  with:
+    #    ruleset: parseonly
+    #    files: |
+    #      test/test1.sv
+    #      test/test2.sv
+    #  continue-on-error: true
     - name: Test with files @ master
       uses: dalance/svlint-action@master
       with:
@@ -41,3 +50,12 @@ jobs:
       continue-on-error: true
       env:
         TEST_DIR: test
+    # TODO: Ruleset test can be enabled after PR merge.
+    #- name: Test with ruleset @ master
+    #  uses: dalance/svlint-action@master
+    #  with:
+    #    ruleset: parseonly
+    #    files: |
+    #      test/test1.sv
+    #      test/test2.sv
+    #  continue-on-error: true
